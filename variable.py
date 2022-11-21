@@ -21,6 +21,9 @@
 
 # Exercise 1
 car_name = 'Ferrari'
+
+
+
 print(car_name)
 
 # Exercise 2
