@@ -19,14 +19,16 @@ def weather_data(query):
 
 
 #Body UI
+Frame(window, width=800, height=50, bg='#353535').place(x=0, y=0)
 
 # Search Bar
 img1 = ImageTk.PhotoImage(Image.open('search.png'))
 def on_enter(e):
-    pass
+    e1.delete(0, 'end')
 
 def on_leave(e):
-    pass
+    if e1.get() == '':
+        e1.insert(0, 'Search City')
 
 e1 = Entry(window, width=21, fg='white', bg="#353535", border=0)
 e1.config(font=('Calibri (Body)', 12))
@@ -36,6 +38,24 @@ e1.insert(0, 'Search City')
 e1.place(x=620, y=15)
 
 #date
+
+#day
+a = datetime.today().strftime('%B')
+b=(a.upper())
+
+#month
+q= datetime.now().month
+
+#time
+now = datetime.now()
+
+c = now.strftime('%B')
+month = c[0:3]
+
+today = datetime.today()
+date = today.strftime("%d")
+
+
 
 window.mainloop()
 
