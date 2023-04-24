@@ -56,6 +56,26 @@ today = datetime.today()
 date = today.strftime("%d")
 
 
+def label(a):
+    Frame(width=500, height=50, bg='#353535').place(x=0, y=0)
+
+    l2 = Label(window, text=str(a), bg='#353535', fg='white')
+    l2.config(font=("Microsoft JhengHei UI Light", 18))
+    l2.place(x=20, y=8)
+
+    # define the weather cast
+    city = a
+    query = 'q='+city
+    w_data =weather_data(query)
+    result = w_data
+    try:
+        check="{}".format(result['main']['temp'])
+        celsius = "{}".format(result['main']['temp'])
+        print(check)
+    except:
+        messagebox.showinfo("", " City name not found")
+
+
 
 window.mainloop()
 
